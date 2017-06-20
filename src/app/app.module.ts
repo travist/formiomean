@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormioAppConfig } from 'ng2-formio';
 import { FormioAuthService, FormioAuthConfig } from 'ng2-formio/auth';
+import { FormioResources } from 'ng2-formio/resource';
 import { AuthConfig, AppConfig } from '../config';
 
 import { AppComponent } from './app.component';
@@ -38,6 +39,7 @@ import { HeaderComponent } from './header/header.component';
     ])
   ],
   providers: [
+    FormioResources,
     FormioAuthService,
     {provide: FormioAuthConfig, useValue: AuthConfig},
     {provide: FormioAppConfig, useValue: AppConfig}
