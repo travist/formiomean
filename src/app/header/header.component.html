@@ -10,6 +10,9 @@
       <a class="navbar-brand" href="#">Event Manager</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="event" *ngIf="auth.authenticated"><a routerLink="event"><span class="glyphicon glyphicon-calendar"></span> Events</a></li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <li routerLinkActive="active" *ngIf="!auth.authenticated"><a routerLink="auth">Login | Register</a></li>
         <li *ngIf="auth.authenticated"><a routerLink="/" (click)="auth.logout()"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
